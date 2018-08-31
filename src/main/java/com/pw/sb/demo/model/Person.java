@@ -1,0 +1,33 @@
+package com.pw.sb.demo.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+public class Person {
+
+    @Getter
+    @Setter
+    private int id;
+
+    @Getter
+    @Setter
+    private String firstName;
+
+    @Getter
+    @Setter
+    private String lastName;
+
+    @Getter
+    @Setter
+    private int age;
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
