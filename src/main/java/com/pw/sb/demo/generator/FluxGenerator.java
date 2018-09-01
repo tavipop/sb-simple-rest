@@ -5,10 +5,18 @@ import reactor.core.publisher.Flux;
 
 public class FluxGenerator<T> {
 
-    public Flux<Person> generate(){
-        return Flux.range(0, 100000)
-                .map(nr -> ModelGenerator.generate());
-                //.map(Integer::toString);
-                //.subscribe(System.out::println);
+    private Class<T> classOfGenericType;
+    private int noOfObjects;
+
+    public FluxGenerator(final Class<T> classOfGenericType, final int noOfObjects){
+        this.classOfGenericType = classOfGenericType;
+        this.noOfObjects = noOfObjects;
+    }
+
+    public Flux<T> generate(){
+        final ModelGenerator<T> generator = new ModelGenerator<>(classOfGenericType);
+
+        return Flux.range(0, noOfObjects)
+                .map(nr -> generator.generate());
     }
 }

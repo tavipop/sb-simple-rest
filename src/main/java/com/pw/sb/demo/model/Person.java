@@ -21,6 +21,10 @@ public class Person {
     @Setter
     private int age;
 
+    @Getter
+    @Setter
+    private boolean sex;
+
     @Override
     public String toString() {
         return "Person{" +
@@ -28,6 +32,7 @@ public class Person {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
+                ", sex=" + sex +
                 '}';
     }
 }
