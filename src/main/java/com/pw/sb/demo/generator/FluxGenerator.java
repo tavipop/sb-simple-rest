@@ -1,6 +1,5 @@
 package com.pw.sb.demo.generator;
 
-import com.pw.sb.demo.model.Person;
 import reactor.core.publisher.Flux;
 
 public class FluxGenerator<T> {
